@@ -17,7 +17,12 @@ public class Producto {
 	private String nombre;
 
     private double precio;
-	
+    
+    private int stock;
+    
+    private String origen;//LOCAL O IMPORTADO
+    
+    
 	public Producto() {
     }
 	
@@ -28,6 +33,16 @@ public class Producto {
 		this.precio = precio;
 	}
 	
+	
+	public Producto(String codigo, String nombre, double precio, int stock, String origen) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.precio = precio;
+		this.stock = stock;
+		this.origen = origen;
+	}
+
 	public String getCodigo() {
 		return codigo;
 	}
@@ -46,13 +61,26 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	public String getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
 
 	@Override
 	public String toString() {
-		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + "]";
-	}
-	
-	
-	
-	
+		return "Producto [codigo=" + codigo + ", nombre=" + nombre + ", precio=" + precio + ", stock=" + stock
+				+ ", origen=" + origen + "]";
+	}	
 }
