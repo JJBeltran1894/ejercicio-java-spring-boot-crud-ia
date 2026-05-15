@@ -22,7 +22,7 @@ class ProductoServiceTest {
 
     @Test
     void testCrearProducto() {
-        Producto producto = new Producto("P001", "Laptop", 1200.50);
+        Producto producto = new Producto("P001", "Laptop", 1200.50,120,"LOCAL");
         Producto creado = productoService.crear(producto);
 
         assertEquals("P001", creado.getCodigo());
@@ -31,7 +31,7 @@ class ProductoServiceTest {
 
     @Test
     void testBuscarPorCodigo() {
-        productoService.crear(new Producto("P002", "Mouse", 25.0));
+        productoService.crear(new Producto("P002", "Mouse", 25.0,35,"IMPORTADO"));
 
         Optional<Producto> encontrado = productoService.buscarPorCodigo("P002");
         assertTrue(encontrado.isPresent());
@@ -46,9 +46,9 @@ class ProductoServiceTest {
 
     @Test
     void testActualizarProducto() {
-        productoService.crear(new Producto("P003", "Teclado", 45.0));
+        productoService.crear(new Producto("P003", "Teclado", 45.0,80,"IMPORTADO"));
 
-        Producto actualizacion = new Producto("P003", "Teclado Mecánico", 65.0);
+        Producto actualizacion = new Producto("P003", "Teclado Mecánico", 65.0,45,"LOCAL");
         Producto actualizado = productoService.actualizar("P003", actualizacion);
 
         assertNotNull(actualizado);
@@ -58,7 +58,7 @@ class ProductoServiceTest {
 
     @Test
     void testEliminarProducto() {
-        productoService.crear(new Producto("P004", "Monitor", 200.0));
+        productoService.crear(new Producto("P004", "Monitor", 200.0,130,"IMPORTADO"));
         
         boolean eliminado = productoService.eliminar("P004");
         assertTrue(eliminado);
