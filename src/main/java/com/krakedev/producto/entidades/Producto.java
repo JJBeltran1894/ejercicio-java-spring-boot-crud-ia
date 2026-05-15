@@ -26,13 +26,6 @@ public class Producto {
 	public Producto() {
     }
 	
-	public Producto(String codigo, String nombre, double precio) {
-
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.precio = precio;
-	}
-	
 	
 	public Producto(String codigo, String nombre, double precio, int stock, String origen) {
 		super();
